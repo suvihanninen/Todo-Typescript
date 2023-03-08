@@ -1,0 +1,164 @@
+.input{
+   margin-bottom: 20px;
+    position: relative;
+}
+
+.input-box{
+    width: 90vw;
+    border-radius: 50px;
+    padding: 20px 30px;
+    font-size: 25px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 0 1px #2F4F4F;
+}
+
+.input-box:focus{
+    box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.159);
+    outline: none
+}
+
+.input-submit{
+    
+    width: 50px;
+    height: 50px;
+    margin: 12px;
+    border-radius: 50px;
+    position: absolute;
+    right: 0px;
+    border: none;
+    font-size: 15px;
+    color:#2F4F4F;
+    background-color: #76ae0a;
+    transition: 0.2s all ease-in-out;
+}
+
+.input-submit:hover{
+    background-color: #cfcfcf;
+    transform: scale(1.1); 
+
+}
+
+.todo-item-container{
+    position: relative;
+    border-radius: 50px;
+    padding: 20px 20px;
+    font-size: 15px;
+    border: none;
+    background-color: #76ae0a;
+    z-index: 1;
+    color: #ededdc;
+    margin: 5px;
+    display: inline-flex;
+    height: 20px;
+    transition: 0.2s all ease-in-out;
+}
+
+.todo-item-container:hover{
+    transform: scale(1.1); 
+
+}
+
+.left-container{
+    width: 50vw;
+    height: 100vh;
+    background-color: #ededdc;
+}
+  
+.right-container{
+    width: 50vw;
+    height: 100vh;
+    background-color:#d3dc82;
+    border-radius: 50px 0;
+    padding-left: 10px;
+}
+
+.item-content{
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.item-icons{
+    position:absolute;
+    right:0px;  
+    margin-right: 10px
+}
+
+.trash-icon{
+    position:absolute;
+    right:0px;  
+    margin-right: 20px
+}
+
+.input-content{
+    display: inline-flex;
+    align-items: center;
+   
+}
+
+.save-button{
+    border-radius: 50px;
+    height: 30px;
+    width: 50px;
+    border: none;
+    box-shadow: inset 0 0 0 1px #2f4f4f;
+    margin-left: 5px;
+    background-color: #d3dc82;
+
+}
+
+.x-icon{
+    width: 30px;
+    height: 30px;
+    margin: 12px;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    color:#2F4F4F;
+    background-color:  rgba(182,215,168, 0.833);
+    transition: 0.2s all ease-in-out;
+    padding: 4px;
+}
+
+.icon{
+    margin-right: 9px;
+}
+
+.back-button{
+    background-color: #ededdc;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 30px 0;
+    z-index: 1;
+    color: #2F4F4F;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+
+
+}
+
+.item-input {
+    border-radius: 50px;
+    margin: 0;
+    height: 25px;
+    padding: 4px;
+    padding-left: 10px;
+    margin-right: 30px;
+    border-color: #2F4F4F;
+    border: none;
+    box-shadow: inset 0 0 0 1px #2f4f4f;
+}
+
+.bottom{
+    flex: 1;
+    height: 100vh;
+    border: 1px solid black;
+    box-sizing: border-box;
+}

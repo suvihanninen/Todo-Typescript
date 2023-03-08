@@ -1,38 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ededdc;
+
+}
+
+.top-container{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.heading{
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 30px 0;
+  z-index: 1;
+  text-align: center;
+  color:#2F4F4F	
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/*@media: applied only when certain conditions are met, 
+such as the width or height of the screen. 
+The values in heading will be overwritten with these values 
+when screen width is less than 800px*/
+@media (max-width: 800px){
+  .heading{
+    margin: 15px 0;
+    font-size: 35px;
   }
 }
+
+.todos-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  
+}
+
+@media (max-width: 1000px){
+  .todos-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.bottom-container{
+  display: flex;
+  flex-direction: row;
+
+}
+

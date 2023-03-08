@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import { render } from '@testing-library/react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import DoneList from './components/DoneList';
+import InputField from "./components/InputField";
+import TodoItem from './components/TodoItem';
+import TodoList from './components/TodoList';
+import { Todo } from './model';
+import { DragDropContext } from 'react-beautiful-dnd'
 
-function App() {
+const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>("")
+
+  /*This is how we can create a type of an interface
+  so the todos state will have an array of Todo interfaces*/
+  const [todos, setTodos] = useState<Todo[]>([])
+  const [completedTodos, setComplitedTodos] = useState<Todo[]>([])
+
+  /*Notice the type on event,
+  We also defined the event in InputField 
+  where we pass the handle add function as a prop*/
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if(todo){
+      setTodos([...todos, {id: Date.now(), todo: todo, isDone: false}])
+      setTodo("")
+    }
+
+  } 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <DragDropContext onDragEnd={()=>{}}>
+      <div className='App'>  
+        <div className='top-container'>
+          <span className='heading'>🌱 todo 🌸</span>
+          <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
+        </div>
+        <div className='bottom-container'>
+          <TodoList todos={todos} setTodos={setTodos} setComplitedTodos={setComplitedTodos} completedTodos={completedTodos}/>
+          <DoneList todos={todos} setTodos={setTodos} setComplitedTodos={setComplitedTodos} completedTodos={completedTodos}/>
+        </div>
+      </div>
+    </DragDropContext>
+    
+  )
 }
 
-export default App;
+export default App
